@@ -1,0 +1,122 @@
+.experience {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background: #38bdf8;
+}
+
+.timelineItem {
+    position: relative;
+
+    display: flex;
+    gap: 2rem;
+
+    margin-bottom: 4rem;
+}
+
+.timelineMarker {
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #38bdf8;
+
+    border: 6px solid #0f172a;
+
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.card {
+    flex: 1;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 16px;
+
+    padding: 2rem;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color: #38bdf8;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.duration {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.card h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+
+    font-size: 1.5rem;
+}
+
+.card h4 {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+}
+
+.card li {
+    margin-bottom: 0.75rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .timelineItem {
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}

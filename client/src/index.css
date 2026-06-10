@@ -1,0 +1,106 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-primary: #38bdf8;
+    --color-text: #f8fafc;
+    --color-text-secondary: #94a3b8;
+
+    --container-width: 1200px;
+
+    --transition: all 0.3s ease;
+}
+
+/* Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Buttons */
+button {
+    border: none;
+    outline: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Utility Container */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Selection Color */
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}

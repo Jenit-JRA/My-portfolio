@@ -1,0 +1,78 @@
+.skills {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    gap: 1.5rem;
+
+    width: max-content;
+
+    animation: scroll 25s linear infinite;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 1rem 1.8rem;
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+    color: #f8fafc;
+
+    transition: all 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+
+    border-color: #38bdf8;
+
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+
+.icon {
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .skill {
+        padding: 0.8rem 1.2rem;
+    }
+}
