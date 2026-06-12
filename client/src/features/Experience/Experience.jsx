@@ -6,13 +6,16 @@ function Experience() {
         {
             role: "Frontend Developer",
             company: "Arab Bank",
-            duration: "2024 - Present",
+            duration: "2023 - Present",
             points: [
-                "Built reusable React components and scalable UI architecture.",
-                "Integrated REST APIs and optimized application performance.",
-                "Collaborated with backend developers and QA teams.",
-                "Implemented responsive and accessible user interfaces.",
-            ],
+                "Developed and enhanced enterprise-scale React applications supporting critical business operations and customer-facing workflows.",
+
+                "Built reusable, scalable UI architectures and integrated complex REST API ecosystems across multiple application modules.",
+
+                "Optimized frontend performance, responsiveness, and accessibility through modern React development best practices.",
+
+                "Partnered with backend teams, QA engineers, and business stakeholders to deliver reliable, production-ready solutions in Agile environments."
+            ]
         },
     ];
 

@@ -1,8 +1,13 @@
 import { Link } from "react-scroll";
+import { useState } from "react";
 import styles from "./Header.module.css";
 import logo from "../assets/logo.png";
 
 function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const closeMenu = () => setIsOpen(false);
+
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -12,7 +17,18 @@ function Header() {
                     className={styles.logo}
                 />
 
-                <ul className={styles.navList}>
+                {/* Mobile Hamburger */}
+                <button
+                    className={styles.menuBtn}
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    ☰
+                </button>
+
+                <ul
+                    className={`${styles.navList} ${isOpen ? styles.open : ""
+                        }`}
+                >
                     <li>
                         <Link
                             to="hero"
@@ -22,6 +38,7 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             Home
                         </Link>
@@ -36,6 +53,7 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             About
                         </Link>
@@ -50,6 +68,7 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             Experience
                         </Link>
@@ -64,6 +83,7 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             Skills
                         </Link>
@@ -78,6 +98,7 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             Projects
                         </Link>
@@ -92,12 +113,25 @@ function Header() {
                             spy={true}
                             activeClass={styles.active}
                             className={styles.navLink}
+                            onClick={closeMenu}
                         >
                             Contact
                         </Link>
                     </li>
+
+                    {/* Mobile Resume */}
+                    <li className={styles.mobileResume}>
+                        <a
+                            href="/JenitAbraham_Resume.pdf"
+                            download
+                            className={styles.navLink}
+                        >
+                            Resume
+                        </a>
+                    </li>
                 </ul>
 
+                {/* Desktop Resume */}
                 <a
                     href="/JenitAbraham_Resume.pdf"
                     download

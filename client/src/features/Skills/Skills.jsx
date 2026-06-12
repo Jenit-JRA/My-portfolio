@@ -1,11 +1,12 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import styles from "./Skills.module.css";
 
 import {
     FaReact,
     FaNodeJs,
     FaGitAlt,
-    FaHtml5,
-    FaCss3Alt,
+    FaCss3Alt
 } from "react-icons/fa";
 
 import {
@@ -13,52 +14,81 @@ import {
     SiTypescript,
     SiRedux,
     SiExpress,
+    SiMongodb,
     SiFirebase,
 } from "react-icons/si";
 
 function Skills() {
-    const skills = [
-        {
-            name: "React",
-            icon: <FaReact />,
-        },
-        {
-            name: "JavaScript",
-            icon: <SiJavascript />,
-        },
-        {
-            name: "TypeScript",
-            icon: <SiTypescript />,
-        },
-        {
-            name: "Redux",
-            icon: <SiRedux />,
-        },
-        {
-            name: "Node.js",
-            icon: <FaNodeJs />,
-        },
-        {
-            name: "Express",
-            icon: <SiExpress />,
-        },
-        {
-            name: "Firebase",
-            icon: <SiFirebase />,
-        },
-        {
-            name: "Git",
-            icon: <FaGitAlt />,
-        },
-        {
-            name: "HTML",
-            icon: <FaHtml5 />,
-        },
-        {
-            name: "CSS",
-            icon: <FaCss3Alt />,
-        },
-    ];
+    const skillIcons = {
+        React: <FaReact />,
+        JavaScript: <SiJavascript />,
+        "Node.js": <FaNodeJs />,
+        Express: <SiExpress />,
+        MongoDB: <SiMongodb />,
+        Git: <FaGitAlt />,
+        Redux: <SiRedux />,
+        CSS: <FaCss3Alt />,
+        Firebase: <SiFirebase />,
+        Typescript: <SiTypescript />
+    };
+    const [skills, setSkills] = useState([])
+    // const skills = [
+    //     {
+    //         name: "React",
+    //         icon: <FaReact />,
+    //     },
+    //     {
+    //         name: "JavaScript",
+    //         icon: <SiJavascript />,
+    //     },
+    //     {
+    //         name: "TypeScript",
+    //         icon: <SiTypescript />,
+    //     },
+    //     {
+    //         name: "Redux",
+    //         icon: <SiRedux />,
+    //     },
+    //     {
+    //         name: "Node.js",
+    //         icon: <FaNodeJs />,
+    //     },
+    //     {
+    //         name: "Express",
+    //         icon: <SiExpress />,
+    //     },
+    //     {
+    //         name: "Firebase",
+    //         icon: <SiFirebase />,
+    //     },
+    //     {
+    //         name: "Git",
+    //         icon: <FaGitAlt />,
+    //     },
+    //     {
+    //         name: "HTML",
+    //         icon: <FaHtml5 />,
+    //     },
+    //     {
+    //         name: "CSS",
+    //         icon: <FaCss3Alt />,
+    //     },
+    // ];
+
+    useEffect(() => {
+        const fetchSkills = async () => {
+            try {
+                const res = await fetch("http://localhost:5000/api/skills")
+                const data = await res.json()
+                setSkills(data)
+                console.log(data)
+            }
+            catch (e) {
+                console.error(e)
+            }
+        }
+        fetchSkills()
+    }, [])
 
     return (
         <section
@@ -78,7 +108,7 @@ function Skills() {
                                 className={styles.skill}
                             >
                                 <span className={styles.icon}>
-                                    {skill.icon}
+                                    {skillIcons[skill.name]}
                                 </span>
 
                                 <span>

@@ -1,3 +1,4 @@
+import Footer from "../components/Footer/Footer";
 import About from "../features/About/About";
 import Contact from "../features/Contact/Contact";
 import Experience from "../features/Experience/Experience";
@@ -15,6 +16,7 @@ function Home() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </>
   );
 }

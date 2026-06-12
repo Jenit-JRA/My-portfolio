@@ -1,40 +1,25 @@
 import { motion } from "framer-motion";
 import styles from "./Projects.module.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Projects() {
-    const projects = [
-        {
-            id: 1,
-            title: "Portfolio Website",
-            description:
-                "Modern full-stack portfolio built using React, Framer Motion, Node.js and Express.",
-            technologies: [
-                "React",
-                "Framer Motion",
-                "Node.js",
-                "Express",
-            ],
-            image:
-                "https://placehold.co/600x400/0f172a/ffffff?text=Portfolio",
-            github: "#",
-            demo: "#",
-        },
-        {
-            id: 2,
-            title: "Notes App",
-            description:
-                "Full-stack notes application with CRUD operations and authentication.",
-            technologies: [
-                "React",
-                "Node.js",
-                "MongoDB",
-            ],
-            image:
-                "https://placehold.co/600x400/0f172a/ffffff?text=Notes+App",
-            github: "#",
-            demo: "#",
-        },
-    ];
+    const [projects, setProjects] = useState([])
+
+    useEffect(() => {
+        const getProjects = async () => {
+            try {
+                const res = await fetch("http://localhost:5000/api/projects")
+                const data = await res.json()
+                setProjects(data)
+            }
+            catch (e) {
+                console.log(e)
+            }
+        }
+        getProjects();
+
+    }, [])
 
     return (
         <section
@@ -99,9 +84,6 @@ function Projects() {
                             </div>
 
                             <div className={styles.links}>
-                                <a href={project.demo}>
-                                    Live Demo
-                                </a>
 
                                 <a href={project.github}>
                                     GitHub
